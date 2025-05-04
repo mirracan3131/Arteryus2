@@ -1,0 +1,521 @@
+{
+  "version": "1.0.0",
+  "rss": "<LINK TO RSS FEED>",
+  "discord": {
+    "clientId": "1176614490876428428",
+    "smallImageText": "ARTERYUSMC YE DAVETLİSİNİZ",
+    "smallImageKey": "nagy_kep"
+  },
+  "servers": [
+    {
+      "id": "ArteryusMc-1.21.4",
+      "name": "ArteryusMc (Minecraft 1.21.4)",
+      "description": "ArteryusMc",
+      "icon": "https://raw.githubusercontent.com/mirracan3131/Arteryus2/refs/heads/main/icon.png",
+      "version": "1.0.0",
+      "address": "oyna.arteryusmc.com",
+      "minecraftVersion": "1.21.4",
+      "discord": {
+        "shortId": "ARTERYUS MC",
+        "largeImageText": "ARTERYUSMC",
+        "largeImageKey": "seal-circle"
+      },
+      "mainServer": true,
+      "autoconnect": true,
+      "modules": [
+        {
+          "id": "net.fabricmc:fabric-loader:0.16.10",
+          "name": "Fabric (fabric-loader)",
+          "type": "Fabric",
+          "artifact": {
+            "size": 1387408,
+            "MD5": "239d59118dec4324672b3d9e9d75efef",
+            "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader/0.16.10/fabric-loader-0.16.10.jar"
+          },
+          "subModules": [
+            {
+              "id": "1.21.4-fabric-0.16.10",
+              "name": "Fabric (version.json)",
+              "type": "VersionManifest",
+              "artifact": {
+                "size": 2859,
+                "MD5": "5b35a8c3c91e765e4bdd7de8c0bd0b7a",
+                "url": "https://www.arteryusmc.com/assets/uploads/images/news/1.21.4-fabric-0.16.10.json"
+              }
+            },
+            {
+              "id": "org.ow2.asm:asm:9.7.1",
+              "name": "Fabric (asm)",
+              "type": "Library",
+              "artifact": {
+                "size": 126093,
+                "MD5": "e2cdd32d198ad31427d298eee9d39d8d",
+                "url": "https://repo1.maven.org/maven2/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar"
+              }
+            },
+            {
+              "id": "org.ow2.asm:asm-analysis:9.7.1",
+              "name": "Fabric (asm-analysis)",
+              "type": "Library",
+              "artifact": {
+                "size": 35126,
+                "MD5": "4cd9e7178dfb85371bba3077e40cd514",
+                "url": "https://repo1.maven.org/maven2/org/ow2/asm/asm-analysis/9.7.1/asm-analysis-9.7.1.jar"
+              }
+            },
+            {
+              "id": "org.ow2.asm:asm-commons:9.7.1",
+              "name": "Fabric (asm-commons)",
+              "type": "Library",
+              "artifact": {
+                "size": 73459,
+                "MD5": "8344aea3c8b7d707e9d35a62710e77c9",
+                "url": "https://repo1.maven.org/maven2/org/ow2/asm/asm-commons/9.7.1/asm-commons-9.7.1.jar"
+              }
+            },
+            {
+              "id": "org.ow2.asm:asm-tree:9.7.1",
+              "name": "Fabric (asm-tree)",
+              "type": "Library",
+              "artifact": {
+                "size": 51939,
+                "MD5": "e85029f613b6469989cc7cf53fe06b74",
+                "url": "https://repo1.maven.org/maven2/org/ow2/asm/asm-tree/9.7.1/asm-tree-9.7.1.jar"
+              }
+            },
+            {
+              "id": "org.ow2.asm:asm-util:9.7.1",
+              "name": "Fabric (asm-util)",
+              "type": "Library",
+              "artifact": {
+                "size": 94519,
+                "MD5": "36d373a9cd6cad9b35db9f984c6b4bbb",
+                "url": "https://repo1.maven.org/maven2/org/ow2/asm/asm-util/9.7.1/asm-util-9.7.1.jar"
+              }
+            },
+            {
+              "id": "net.fabricmc:sponge-mixin:0.15.4+mixin.0.8.7",
+              "name": "Fabric (sponge-mixin)"
+              "type": "Library",
+              "artifact": {
+                "size": 1494834,
+                "MD5": "991ca8be2c408fe19eb64014d8a18243",
+                "url": "https://maven.fabricmc.net/net/fabricmc/sponge-mixin/0.15.4%2Bmixin.0.8.7/sponge-mixin-0.15.4+mixin.0.8.7.jar"
+              }
+            },
+            {
+              "id": "net.fabricmc:intermediary:1.21.4",
+              "name": "Fabric (intermediary)",
+              "type": "Library",
+              "artifact": {
+                "size": 701826,
+                "MD5": "d0f4187a62328d4a95f3428434efbd48",
+                "url": "https://maven.fabricmc.net/net/fabricmc/intermediary/1.21.4/intermediary-1.21.4.jar"
+              }
+            }
+          ]
+        },
+        {
+          "id": "generated.fabricmod:badoptimizations:2.2.1@jar",
+          "name": "BadOptimizations",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 109756,
+            "url": "https://cdn.modrinth.com/data/g96Z4WVZ/versions/EPTfY6pQ/BadOptimizations-2.2.1-1.21.2-21.4.jar",
+            "MD5": "984855df89f899e6b3c08219b59371a3"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "com.ishland:c2me:0.3.2+alpha.0.41+1.21.4@jar",
+          "name": "Concurrent Chunk Management Engine",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 4663815,
+            "url": "https://cdn.modrinth.com/data/VSNURh3q/versions/lVjBKxS3/c2me-fabric-mc1.21.4-0.3.2%2Balpha.0.41.jar",
+            "MD5": "f8357018ee3840f5625b77c0e15cf6bd"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "me.shedaniel.autoconfig.example:cloth-config:17.0.144@jar",
+          "name": "Cloth Config v17",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1152857,
+            "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/TJ6o2sr4/cloth-config-17.0.144-fabric.jar",
+            "MD5": "07b7d5bc15bdc7387cf8890d0c460b54"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "dev.tr7zw:entityculling:1.7.3@jar",
+          "name": "EntityCulling",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 73522,
+            "url": "https://cdn.modrinth.com/data/NNAgCjsB/versions/p8LaakE9/entityculling-fabric-1.7.3-mc1.21.4.jar",
+            "MD5": "7de29eddbcf4a6f25e96dc9874206f4f"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "generated.fabricmod:fabric-api:0.119.0+1.21.4@jar",
+          "name": "Fabric API",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 2147391,
+            "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/HbTXYTBz/fabric-api-0.119.0%2B1.21.4.jar",
+            "MD5": "949b4c4ccb09945677ae528bae925231"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "de.keksuccino:fancymenu:3.5.0@jar",
+          "name": "FancyMenu",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 3445327,
+            "url": "https://cdn.modrinth.com/data/Wq5SjeWM/versions/OlpUrMK3/fancymenu_fabric_3.5.0_MC_1.21.4.jar",
+            "MD5": "4101e048e454b2dae68fb17b0b421726"
+          }
+        },
+        {
+          "id": "generated.fabricmod:ferritecore:7.1.1@jar",
+          "name": "FerriteCore",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 107026,
+            "url": "https://cdn.modrinth.com/data/uXXizFIs/versions/IPM0JlHd/ferritecore-7.1.1-fabric.jar",
+            "MD5": "cddea62080b823c0c55f72408a0c3ffb"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "generated.fabricmod:immediatelyfast:1.8.0+1.21.4@jar",
+          "name": "ImmediatelyFast",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 227072,
+            "url": "https://cdn.modrinth.com/data/5ZwdcRci/versions/ddjmgf0b/ImmediatelyFast-Fabric-1.8.0%2B1.21.4.jar",
+            "MD5": "6ca4f1eda15f81f3336debc0e49d1275"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "generated.fabricmod:iris:1.8.8+mc1.21.4@jar",
+          "name": "Iris",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 2682702,
+            "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/Ca054sTe/iris-fabric-1.8.8%2Bmc1.21.4.jar",
+            "MD5": "59d373e4874efbcb8fb426bdefa588d9"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "de.keksuccino:konkrete:1.9.9@jar",
+          "name": "Konkrete",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 787890,
+            "url": "https://cdn.modrinth.com/data/J81TRJWm/versions/9I475ADm/konkrete_fabric_1.9.9_MC_1.21.4.jar",
+            "MD5": "7fdc8f1047e0aaad088fae4f0f0faa5e"
+          }
+        },
+        {
+          "id": "net.caffeinemc.mods:lithium:0.15.0+mc1.21.4@jar",
+          "name": "Lithium",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 779297,
+            "url": "https://cdn.modrinth.com/data/gvQqBUqZ/versions/HtiXknlD/lithium-fabric-0.15.0%2Bmc1.21.4.jar",
+            "MD5": "6c80d3074505c16240d32b0e3b0ad48b"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "de.keksuccino:melody:1.0.10@jar",
+          "name": "Melody",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 188035,
+            "url": "https://cdn.modrinth.com/data/CVT4pFB2/versions/OqxSeb4n/melody_fabric_1.0.10_MC_1.21.jar",
+            "MD5": "0f1bfbf2dd4fa047a1616fc448f3b856"
+          }
+        },
+        {
+          "id": "org.embeddedt:modernfix:5.20.3+mc1.21.4@jar",
+          "name": "ModernFix",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 436498,
+            "url": "https://cdn.modrinth.com/data/nmDcB62a/versions/ZGxQddYr/modernfix-fabric-5.20.3%2Bmc1.21.4.jar",
+            "MD5": "1bee2326edcced182b86154e44810971"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "ca.fxco:moreculling:1.2.9@jar",
+          "name": "More Culling",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 349147,
+            "url": "https://cdn.modrinth.com/data/51shyZVL/versions/kELp84IT/moreculling-fabric-1.21.4-1.2.9.jar",
+            "MD5": "cf6d3d3ad716d8f32ea1f8ecdfabea75"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "com.aizistral:nochatreports:1.21.4-v2.11.0@jar",
+          "name": "No Chat Reports",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 321286,
+            "url": "https://cdn.modrinth.com/data/qQyHxfxd/versions/9xt05630/NoChatReports-FABRIC-1.21.4-v2.11.0.jar",
+            "MD5": "47bd3acbbaaf09dae1c5142dc5b3f41c"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "io.github.steveplays28:noisium:2.5.0+mc1.21.4@jar",
+          "name": "Noisium",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 216077,
+            "url": "https://cdn.modrinth.com/data/KuNKN7d2/versions/9NHdQfkN/noisium-fabric-2.5.0%2Bmc1.21.4.jar",
+            "MD5": "49c5f1d65093ab52bba0af8e40f53f22"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "net.caffeinemc.mods:sodium:0.6.10+mc1.21.4@jar",
+          "name": "Sodium",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1305866,
+            "url": "https://cdn.modrinth.com/data/AANobbMI/versions/FRXt5xaI/sodium-fabric-0.6.10%2Bmc1.21.4.jar",
+            "MD5": "468185e438a8f5f406c71c15daa0ee61"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "com.github.getchoo.smoothboot:threadtweak:0.1.5+mc1.21.3@jar",
+          "name": "ThreadTweak",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 144353,
+            "url": "https://cdn.modrinth.com/data/vSEH1ERy/versions/F4sjmsi3/threadtweak-fabric-0.1.5%2Bmc1.21.1.jar",
+            "MD5": "9bb0508fc4cceb1ad41f6f32d883b9b9"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "com.ishland:vmp:0.2.0+beta.7.191+1.21.4@jar",
+          "name": "Very Many Players",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 424344,
+            "url": "https://cdn.modrinth.com/data/wnEe9KBa/versions/u6k08AVM/vmp-fabric-mc1.21.4-0.2.0%2Bbeta.7.191-all.jar",
+            "MD5": "f6d66c2d40579c80aaacc723ce7f5262"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "de.maxhenkel:voicechat:1.21.4-2.5.30@jar",
+          "name": "Simple Voice Chat",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 6615653,
+            "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/JRSB7SDd/voicechat-fabric-1.21.4-2.5.30.jar",
+            "MD5": "b8cadad576b8d5fe7e2f55b2f36b0ead"
+          }
+        },
+        {
+          "id": "arteryus.png",
+          "name": "arteryus.png",
+          "type": "File",
+          "artifact": {
+            "size": 729345,
+            "url": "https://raw.githubusercontent.com/mirracan3131/Arteryus2/refs/heads/main/arteryus.png",
+            "MD5": "2ce7f1beb5c30a818f504ce1de3608e9",
+            "path": "config/fancymenu/assets/arteryus.png"
+          }
+        },
+        {
+          "id": "bn.png",
+          "name": "bn.png",
+          "type": "File",
+          "artifact": {
+            "size": 557265,
+            "url": "https://raw.githubusercontent.com/mirracan3131/Arteryus2/refs/heads/main/fancymenu/assets/bn.png",
+            "MD5": "fe194a33f736843f6f5657052d45bdad",
+            "path": "config/fancymenu/assets/bn.png"
+          }
+        },
+        {
+          "id": "customizablemenus.txt",
+          "name": "customizablemenus.txt",
+          "type": "File",
+          "artifact": {
+            "size": 84,
+            "url": "https://github.com/mirracan3131/Arteryus2/raw/refs/heads/main/fancymenu/customizablemenus.txt",
+            "MD5": "aafc4f6dac82be4c7ac3ba12380e09c7",
+            "path": "config/fancymenu/customizablemenus.txt"
+          }
+        },
+        {
+          "id": "join1_multiplayer_screen_layout.txt",
+          "name": "join1_multiplayer_screen_layout.txt",
+          "type": "File",
+          "artifact": {
+            "size": 11344,
+            "url": "https://github.com/mirracan3131/Arteryus2/raw/refs/heads/main/fancymenu/customization/join1_multiplayer_screen_layout.txt",
+            "MD5": "5dae09cb3b7ae9c57984a201acc4c125",
+            "path": "config/fancymenu/customization/join1_multiplayer_screen_layout.txt"
+          }
+        },
+        {
+          "id": "test1_screen_layout.txt",
+          "name": "test1_screen_layout.txt",
+          "type": "File",
+          "artifact": {
+            "size": 22271,
+            "url": "https://github.com/mirracan3131/Arteryus2/raw/refs/heads/main/fancymenu/customization/test1_screen_layout.txt",
+            "MD5": "f7cbc0874cd9131831672e30226a7b0a",
+            "path": "config/fancymenu/customization/test1_screen_layout.txt"
+          }
+        },
+        {
+          "id": "custom_gui_screens.txt",
+          "name": "custom_gui_screens.txt",
+          "type": "File",
+          "artifact": {
+            "size": 51,
+            "url": "https://github.com/mirracan3131/Arteryus2/raw/refs/heads/main/fancymenu/custom_gui_screens.txt",
+            "MD5": "106e52948415f0879c53304f50783b28",
+            "path": "config/fancymenu/custom_gui_screens.txt"
+          }
+        },
+        {
+          "id": "element_layer_control.lewidget",
+          "name": "element_layer_control.lewidget",
+          "type": "File",
+          "artifact": {
+            "size": 197,
+            "url": "https://github.com/mirracan3131/Arteryus2/raw/refs/heads/main/fancymenu/layout_editor/widgets/element_layer_control.lewidget",
+            "MD5": "70546b71ee503f0bf790bfbd1a1b8c2d",
+            "path": "config/fancymenu/layout_editor/widgets/element_layer_control.lewidget"
+          }
+        },
+        {
+          "id": "legacy_checklist.txt",
+          "name": "legacy_checklist.txt",
+          "type": "File",
+          "artifact": {
+            "size": 42,
+            "url": "https://github.com/mirracan3131/Arteryus2/raw/refs/heads/main/fancymenu/legacy_checklist.txt",
+            "MD5": "bc03e01c4f1bf1e24e9b86591baa512b",
+            "path": "config/fancymenu/legacy_checklist.txt"
+          }
+        },
+        {
+          "id": "options.txt",
+          "name": "options.txt",
+          "type": "File",
+          "artifact": {
+            "size": 1802,
+            "url": "https://github.com/mirracan3131/Arteryus2/raw/refs/heads/main/fancymenu/options.txt",
+            "MD5": "25252147a1ddfb866a4a6e4f41ccb74e",
+            "path": "config/fancymenu/options.txt"
+          }
+        },
+        {
+          "id": "dark.json",
+          "name": "dark.json",
+          "type": "File",
+          "artifact": {
+            "size": 4133,
+            "url": "https://github.com/mirracan3131/Arteryus2/raw/refs/heads/main/fancymenu/ui_themes/dark.json",
+            "MD5": "1fc916f1d20b24c5f0d2d138d19c49a4",
+            "path": "config/fancymenu/ui_themes/dark.json"
+          }
+        },
+        {
+          "id": "light.json",
+          "name": "light.json",
+          "type": "File",
+          "artifact": {
+            "size": 4135,
+            "url": "https://github.com/mirracan3131/Arteryus2/raw/refs/heads/main/fancymenu/ui_themes/light.json",
+            "MD5": "adfba137b3d62c50a5186a4f6523a72a",
+            "path": "config/fancymenu/ui_themes/light.json"
+          }
+        },
+        {
+          "id": "user_variables.db",
+          "name": "user_variables.db",
+          "type": "File",
+          "artifact": {
+            "size": 23,
+            "url": "https://github.com/mirracan3131/Arteryus2/raw/refs/heads/main/fancymenu/user_variables.db",
+            "MD5": "458e4f3f673e3fea22fb92bf76fcf912",
+            "path": "config/fancymenu/user_variables.db"
+          }
+        },
+        {
+          "id": "last_world.fmdata",
+          "name": "last_world.fmdata",
+          "type": "File",
+          "artifact": {
+            "size": 84,
+            "url": "https://github.com/mirracan3131/Arteryus2/raw/refs/heads/main/fancymenu_data/last_world.fmdata",
+            "MD5": "78c4baca75cbc4a5075e9c3c65eecf3c",
+            "path": "fancymenu_data/last_world.fmdata"
+          }
+        },
+        {
+          "id": "servers.dat",
+          "name": "servers.dat",
+          "type": "File",
+          "artifact": {
+            "size": 102,
+            "url": "https://github.com/mirracan3131/Arteryus2/raw/refs/heads/main/servers.dat",
+            "MD5": "0a608469080e01fa86334456d9133408",
+            "path": "servers.dat"
+          }
+        }
+      ]
+    }
