@@ -1,1 +1,54 @@
+<div align="center">
+  <a href="https://mcsmanager.com/" target="_blank">
+    <img src="https://public-link.oss-cn-shenzhen.aliyuncs.com/mcsm_picture/logo.png" alt="MCSManagerLogo.png" width="510px" />    
+  </a>
 
+  <br />
+  
+  <h1 id="mcsmanager">
+    <a href="https://mcsmanager.com/" target="_blank">MCSManager Panel</a>
+  </h1>
+
+[![--](https://img.shields.io/badge/Support-Windows/Linux-green.svg)](https://github.com/MCSManager)
+[![Durum](https://img.shields.io/badge/npm-v8.9.14-blue.svg)](https://www.npmjs.com/)
+[![Durum](https://img.shields.io/badge/node-v16.20.2-blue.svg)](https://nodejs.org/en/download/)
+[![Lisans](https://img.shields.io/badge/License-Apache%202.0-red.svg)](https://github.com/MCSManager)
+
+[Resmî Web Sitesi](http://mcsmanager.com/) | [Belgeler](https://docs.mcsmanager.com/) | [Discord](https://discord.gg/BNpYMVX7Cd)
+
+[简体中文](README_ZH.md) | [繁體中文](README_TW.md) | [Deutsch](README_DE.md) | [Português BR](README_PTBR.md) |
+[日本語](README_JP.md) | [Español](README_ES.md) | [Thai](README_TH.md)
+
+</div>
+
+<br />
+
+## MCSManager Nedir?
+
+**MCSManager Paneli** (MCSM), Minecraft ve Steam oyun sunucularını yönetmek için tasarlanmış **modern, güvenli ve dağıtılmış** bir kontrol panelidir.
+
+MCSManager özellikle Minecraft topluluğu içinde belirli bir popülerliğe ulaşmıştır. Birden fazla sunucuyu merkezi olarak yönetmek için mükemmel bir çözüm sunar ve güvenli, güvenilir çok kullanıcılı izin sistemi sağlar. Ayrıca, sadece Minecraft için değil, Terraria ve çeşitli Steam oyunları için de sunucu yöneticilerini desteklemeye kararlıyız. Amacımız, oyun sunucu yönetimi için canlı ve destekleyici bir topluluk oluşturmaktır.
+
+MCSManager şu dilleri desteklemektedir: **İngilizce, Fransızca, Almanca, İtalyanca, Japonca, Portekizce, Basitleştirilmiş Çince ve Geleneksel Çince** — gelecekte daha fazla dil desteği planlanmaktadır!
+
+**Terminal Görünümü**
+
+![yüklenemedi](/.github/panel-image.png)
+
+**Sunucu Listesi**
+
+![yüklenemedi](/.github/panel-instances.png)
+
+**Özelleştirilmiş Arayüz**
+
+![yüklenemedi](/.github/panel-custom-layout.gif)
+
+## Özellikler
+
+1. `Minecraft` Java/Bedrock sunucusu tek tıklamayla kurulabilir
+2. Çoğu `Steam` oyun sunucusuyla uyumlu (örnek: `Palworld`, `Squad`, `Project Zomboid`, `Terraria`, vb.)
+3. Özelleştirilebilir kullanıcı arayüzü, kendi düzeninizi oluşturun
+4. `Docker Hub` üzerindeki tüm imajları destekler, çoklu kullanıcı ve ticari hizmet desteği sunar!
+5. Tek bir web arayüzü ile birden fazla sunucuyu yönetin
+6. Basit teknoloji yığını; yalnızca Typescript bilgisiyle tüm MCSManager geliştirilebilir
+7. Ve daha fazlası!
