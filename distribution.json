@@ -38,7 +38,7 @@
               "name": "Fabric (version.json)",
               "type": "VersionManifest",
               "artifact": {
-                "size": 2859,
+                "size": 2857,
                 "MD5": "5b35a8c3c91e765e4bdd7de8c0bd0b7a",
                 "url": "https://www.arteryusmc.com/assets/uploads/images/news/1.21.4-fabric-0.16.10.json"
               }
@@ -332,7 +332,7 @@
           "name": "ThreadTweak",
           "type": "FabricMod",
           "artifact": {
-            "size": 144353,
+            "size": 144270,
             "url": "https://cdn.modrinth.com/data/vSEH1ERy/versions/F4sjmsi3/threadtweak-fabric-0.1.5%2Bmc1.21.1.jar",
             "MD5": "9bb0508fc4cceb1ad41f6f32d883b9b9"
           },
