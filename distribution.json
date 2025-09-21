@@ -95,7 +95,7 @@
             },
             {
               "id": "net.fabricmc:sponge-mixin:0.15.4+mixin.0.8.7",
-              "name": "Fabric (sponge-mixin)"
+              "name": "Fabric (sponge-mixin)",
               "type": "Library",
               "artifact": {
                 "size": 1494834,
