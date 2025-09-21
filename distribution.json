@@ -44,13 +44,13 @@
               }
             },
             {
-              "id": "org.ow2.asm:asm:9.7.1",
+              "id": "org.ow2.asm:asm:9.6",
               "name": "Fabric (asm)",
               "type": "Library",
               "artifact": {
-                "size": 126093,
-                "MD5": "e2cdd32d198ad31427d298eee9d39d8d",
-                "url": "https://repo1.maven.org/maven2/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar"
+                "size": 123598,
+                "MD5": "6f8bccf756f170d4185bb24c8c2d2020",
+                "url": "https://repo1.maven.org/maven2/org/ow2/asm/asm/9.6/asm-9.6.jar"
               }
             },
             {
