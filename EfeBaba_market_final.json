@@ -1,23 +1,43 @@
 {
-  "language": "en_us",
-  "platform": "Linux",
-  "description": "One-click setup for Prominence II: Hasturian Era (Fabric 1.20.1). Automatically installs Fabric, accepts the EULA, and prepares a ready-to-run server.",
-  "image": "https://cdn.modrinth.com/data/WzZxZs1f/53a0bdf95f22539d803621b1d4977b9a1c935e9f.png",
-  "gameType": "Minecraft",
-  "title": "[Efe Baba] Prominence II: Hasturian Era (Fabric 1.20.1)",
-  "category": "mc-fabric",
-  "runtime": "Java 17+",
-  "hardware": "RAM 8G+",
-  "size": "850MB",
-  "remark": "Fabric modpack by Efe Baba — fully automatic installation.",
-  "targetLink": "https://cdn.modrinth.com/data/WzZxZs1f/versions/xI4sT3xn/Prominence%20II%20-%20Hasturian%20Era%20Server%20Pack%20(Fabric%201.20.1).zip",
-  "author": "Efe Baba",
-  "setupInfo": {
-    "type": "minecraft/java/fabric",
-    "startCommand": "java -Xms8G -Xmx8G -jar fabric-server-launch.jar nogui",
-    "stopCommand": "stop",
-    "updateCommand": "",
-    "ie": "utf-8",
-    "oe": "utf-8"
-  }
+  "languages": [
+    {
+      "label": "English",
+      "value": "en_us",
+      "path": "templates-en.json"
+    }
+  ],
+  "packages": [
+    {
+      "language": "en_us",
+      "platform": "Linux",
+      "description": "Automatic installation of Prominence II: Hasturian Era (Fabric 1.20.1). Downloads, extracts, and runs the Fabric server.",
+      "image": "https://cdn.modrinth.com/data/WzZxZs1f/53a0bdf95f22539d803621b1d4977b9a1c935e9f.png",
+      "gameType": "Minecraft",
+      "title": "[Efe Baba] Prominence II: Hasturian Era (Fabric 1.20.1)",
+      "category": "mc-fabric",
+      "runtime": "Java 17+",
+      "hardware": "RAM 8G+",
+      "size": "900MB",
+      "remark": "Fabric modpack auto-install by Efe Baba.",
+      "targetLink": "https://cdn.modrinth.com/data/WzZxZs1f/versions/xI4sT3xn/Prominence%20II%20-%20Hasturian%20Era%20Server%20Pack%20(Fabric%201.20.1).zip",
+      "author": "Efe Baba",
+      "setupInfo": {
+        "type": "minecraft/java/fabric",
+        "startCommand": "java -Xms8G -Xmx8G -jar fabric-server-launch.jar nogui",
+        "stopCommand": "stop",
+        "updateCommand": "",
+        "ie": "utf-8",
+        "oe": "utf-8",
+        "initCommands": [
+          "set -e",
+          "echo '=== Installing Prominence II: Hasturian Era (Fabric 1.20.1) ==='",
+          "MC_VERSION=1.20.1",
+          "echo 'eula=true' > eula.txt",
+          "echo 'Downloading Fabric server...'",
+          "curl -Lf 'https://meta.fabricmc.net/v2/versions/loader/1.20.1/0.15.10/0.11.2/server/jar' -o fabric-server-launch.jar",
+          "echo '=== Installation complete! ==='"
+        ]
+      }
+    }
+  ]
 }
