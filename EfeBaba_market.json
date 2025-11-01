@@ -1,0 +1,1138 @@
+{
+  "version": "2025-11-01",
+  "apps": [
+    {
+      "id": "efebaba-paper-1-20",
+      "title": "Efe Baba Paper 1.20",
+      "description": "Installs and runs PaperMC build for Minecraft 1.20 on Linux. Auto-fetches the latest build for this version.",
+      "tags": [
+        "minecraft",
+        "paper",
+        "java",
+        "server",
+        "1.20"
+      ],
+      "icon": "https://papermc.io/assets/images/papermc-logo.svg",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.20",
+        "MEMORY": "4G",
+        "JAR_NAME": "paper.jar"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "API=\"https://api.papermc.io/v2/projects/paper/versions/${MC_VERSION}/builds\"",
+          "BUILD=$(curl -s \"$API\" | jq -r '.builds[-1].build')",
+          "URL=\"https://api.papermc.io/v2/projects/paper/versions/${MC_VERSION}/builds/${BUILD}/downloads/paper-${MC_VERSION}-${BUILD}.jar\"",
+          "curl -Lf \"$URL\" -o ${JAR_NAME}"
+        ]
+      },
+      "start": {
+        "linux": "java -Xms${MEMORY} -Xmx${MEMORY} -jar ${JAR_NAME} nogui"
+      }
+    },
+    {
+      "id": "efebaba-forge-1-20",
+      "title": "Efe Baba Forge 1.20",
+      "description": "Installs the official Forge server for Minecraft 1.20 on Linux using the latest installer available on Forge Maven.",
+      "tags": [
+        "minecraft",
+        "forge",
+        "java",
+        "server",
+        "1.20"
+      ],
+      "icon": "https://files.minecraftforge.net/static/media/logo.9c1a9a6b.svg",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.20",
+        "MEMORY": "4G"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "META_URL=\"https://maven.minecraftforge.net/net/minecraftforge/forge/maven-metadata.xml\"",
+          "VER=$(curl -s $META_URL | sed -n 's:.*<version>\\(.*\\)</version>.*:\\1:p' | grep \"^${MC_VERSION}-\" | tail -n 1)",
+          "INS=\"forge-${VER}-installer.jar\"",
+          "curl -Lf \"https://maven.minecraftforge.net/net/minecraftforge/forge/${VER}/${INS}\" -o ${INS}",
+          "java -jar ${INS} --installServer"
+        ]
+      },
+      "start": {
+        "linux": "bash run.sh"
+      }
+    },
+    {
+      "id": "efebaba-fabric-1-20",
+      "title": "Efe Baba Fabric 1.20",
+      "description": "Sets up a Fabric server for Minecraft 1.20 on Linux using the official Fabric installer and latest loader metadata.",
+      "tags": [
+        "minecraft",
+        "fabric",
+        "java",
+        "server",
+        "1.20"
+      ],
+      "icon": "https://fabricmc.net/assets/logo.png",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.20",
+        "MEMORY": "4G"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "INS=$(curl -s https://meta.fabricmc.net/v2/versions/installer | jq -r '.[0].url')",
+          "curl -Lf \"$INS\" -o fabric-installer.jar",
+          "java -jar fabric-installer.jar server -mcversion ${MC_VERSION} -downloadMinecraft -noprofile"
+        ]
+      },
+      "start": {
+        "linux": "java -Xms${MEMORY} -Xmx${MEMORY} -jar fabric-server-launch.jar nogui"
+      }
+    },
+    {
+      "id": "efebaba-paper-1-20-1",
+      "title": "Efe Baba Paper 1.20.1",
+      "description": "Installs and runs PaperMC build for Minecraft 1.20.1 on Linux. Auto-fetches the latest build for this version.",
+      "tags": [
+        "minecraft",
+        "paper",
+        "java",
+        "server",
+        "1.20.1"
+      ],
+      "icon": "https://papermc.io/assets/images/papermc-logo.svg",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.20.1",
+        "MEMORY": "4G",
+        "JAR_NAME": "paper.jar"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "API=\"https://api.papermc.io/v2/projects/paper/versions/${MC_VERSION}/builds\"",
+          "BUILD=$(curl -s \"$API\" | jq -r '.builds[-1].build')",
+          "URL=\"https://api.papermc.io/v2/projects/paper/versions/${MC_VERSION}/builds/${BUILD}/downloads/paper-${MC_VERSION}-${BUILD}.jar\"",
+          "curl -Lf \"$URL\" -o ${JAR_NAME}"
+        ]
+      },
+      "start": {
+        "linux": "java -Xms${MEMORY} -Xmx${MEMORY} -jar ${JAR_NAME} nogui"
+      }
+    },
+    {
+      "id": "efebaba-forge-1-20-1",
+      "title": "Efe Baba Forge 1.20.1",
+      "description": "Installs the official Forge server for Minecraft 1.20.1 on Linux using the latest installer available on Forge Maven.",
+      "tags": [
+        "minecraft",
+        "forge",
+        "java",
+        "server",
+        "1.20.1"
+      ],
+      "icon": "https://files.minecraftforge.net/static/media/logo.9c1a9a6b.svg",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.20.1",
+        "MEMORY": "4G"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "META_URL=\"https://maven.minecraftforge.net/net/minecraftforge/forge/maven-metadata.xml\"",
+          "VER=$(curl -s $META_URL | sed -n 's:.*<version>\\(.*\\)</version>.*:\\1:p' | grep \"^${MC_VERSION}-\" | tail -n 1)",
+          "INS=\"forge-${VER}-installer.jar\"",
+          "curl -Lf \"https://maven.minecraftforge.net/net/minecraftforge/forge/${VER}/${INS}\" -o ${INS}",
+          "java -jar ${INS} --installServer"
+        ]
+      },
+      "start": {
+        "linux": "bash run.sh"
+      }
+    },
+    {
+      "id": "efebaba-fabric-1-20-1",
+      "title": "Efe Baba Fabric 1.20.1",
+      "description": "Sets up a Fabric server for Minecraft 1.20.1 on Linux using the official Fabric installer and latest loader metadata.",
+      "tags": [
+        "minecraft",
+        "fabric",
+        "java",
+        "server",
+        "1.20.1"
+      ],
+      "icon": "https://fabricmc.net/assets/logo.png",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.20.1",
+        "MEMORY": "4G"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "INS=$(curl -s https://meta.fabricmc.net/v2/versions/installer | jq -r '.[0].url')",
+          "curl -Lf \"$INS\" -o fabric-installer.jar",
+          "java -jar fabric-installer.jar server -mcversion ${MC_VERSION} -downloadMinecraft -noprofile"
+        ]
+      },
+      "start": {
+        "linux": "java -Xms${MEMORY} -Xmx${MEMORY} -jar fabric-server-launch.jar nogui"
+      }
+    },
+    {
+      "id": "efebaba-paper-1-20-2",
+      "title": "Efe Baba Paper 1.20.2",
+      "description": "Installs and runs PaperMC build for Minecraft 1.20.2 on Linux. Auto-fetches the latest build for this version.",
+      "tags": [
+        "minecraft",
+        "paper",
+        "java",
+        "server",
+        "1.20.2"
+      ],
+      "icon": "https://papermc.io/assets/images/papermc-logo.svg",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.20.2",
+        "MEMORY": "4G",
+        "JAR_NAME": "paper.jar"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "API=\"https://api.papermc.io/v2/projects/paper/versions/${MC_VERSION}/builds\"",
+          "BUILD=$(curl -s \"$API\" | jq -r '.builds[-1].build')",
+          "URL=\"https://api.papermc.io/v2/projects/paper/versions/${MC_VERSION}/builds/${BUILD}/downloads/paper-${MC_VERSION}-${BUILD}.jar\"",
+          "curl -Lf \"$URL\" -o ${JAR_NAME}"
+        ]
+      },
+      "start": {
+        "linux": "java -Xms${MEMORY} -Xmx${MEMORY} -jar ${JAR_NAME} nogui"
+      }
+    },
+    {
+      "id": "efebaba-forge-1-20-2",
+      "title": "Efe Baba Forge 1.20.2",
+      "description": "Installs the official Forge server for Minecraft 1.20.2 on Linux using the latest installer available on Forge Maven.",
+      "tags": [
+        "minecraft",
+        "forge",
+        "java",
+        "server",
+        "1.20.2"
+      ],
+      "icon": "https://files.minecraftforge.net/static/media/logo.9c1a9a6b.svg",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.20.2",
+        "MEMORY": "4G"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "META_URL=\"https://maven.minecraftforge.net/net/minecraftforge/forge/maven-metadata.xml\"",
+          "VER=$(curl -s $META_URL | sed -n 's:.*<version>\\(.*\\)</version>.*:\\1:p' | grep \"^${MC_VERSION}-\" | tail -n 1)",
+          "INS=\"forge-${VER}-installer.jar\"",
+          "curl -Lf \"https://maven.minecraftforge.net/net/minecraftforge/forge/${VER}/${INS}\" -o ${INS}",
+          "java -jar ${INS} --installServer"
+        ]
+      },
+      "start": {
+        "linux": "bash run.sh"
+      }
+    },
+    {
+      "id": "efebaba-fabric-1-20-2",
+      "title": "Efe Baba Fabric 1.20.2",
+      "description": "Sets up a Fabric server for Minecraft 1.20.2 on Linux using the official Fabric installer and latest loader metadata.",
+      "tags": [
+        "minecraft",
+        "fabric",
+        "java",
+        "server",
+        "1.20.2"
+      ],
+      "icon": "https://fabricmc.net/assets/logo.png",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.20.2",
+        "MEMORY": "4G"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "INS=$(curl -s https://meta.fabricmc.net/v2/versions/installer | jq -r '.[0].url')",
+          "curl -Lf \"$INS\" -o fabric-installer.jar",
+          "java -jar fabric-installer.jar server -mcversion ${MC_VERSION} -downloadMinecraft -noprofile"
+        ]
+      },
+      "start": {
+        "linux": "java -Xms${MEMORY} -Xmx${MEMORY} -jar fabric-server-launch.jar nogui"
+      }
+    },
+    {
+      "id": "efebaba-paper-1-20-3",
+      "title": "Efe Baba Paper 1.20.3",
+      "description": "Installs and runs PaperMC build for Minecraft 1.20.3 on Linux. Auto-fetches the latest build for this version.",
+      "tags": [
+        "minecraft",
+        "paper",
+        "java",
+        "server",
+        "1.20.3"
+      ],
+      "icon": "https://papermc.io/assets/images/papermc-logo.svg",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.20.3",
+        "MEMORY": "4G",
+        "JAR_NAME": "paper.jar"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "API=\"https://api.papermc.io/v2/projects/paper/versions/${MC_VERSION}/builds\"",
+          "BUILD=$(curl -s \"$API\" | jq -r '.builds[-1].build')",
+          "URL=\"https://api.papermc.io/v2/projects/paper/versions/${MC_VERSION}/builds/${BUILD}/downloads/paper-${MC_VERSION}-${BUILD}.jar\"",
+          "curl -Lf \"$URL\" -o ${JAR_NAME}"
+        ]
+      },
+      "start": {
+        "linux": "java -Xms${MEMORY} -Xmx${MEMORY} -jar ${JAR_NAME} nogui"
+      }
+    },
+    {
+      "id": "efebaba-forge-1-20-3",
+      "title": "Efe Baba Forge 1.20.3",
+      "description": "Installs the official Forge server for Minecraft 1.20.3 on Linux using the latest installer available on Forge Maven.",
+      "tags": [
+        "minecraft",
+        "forge",
+        "java",
+        "server",
+        "1.20.3"
+      ],
+      "icon": "https://files.minecraftforge.net/static/media/logo.9c1a9a6b.svg",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.20.3",
+        "MEMORY": "4G"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "META_URL=\"https://maven.minecraftforge.net/net/minecraftforge/forge/maven-metadata.xml\"",
+          "VER=$(curl -s $META_URL | sed -n 's:.*<version>\\(.*\\)</version>.*:\\1:p' | grep \"^${MC_VERSION}-\" | tail -n 1)",
+          "INS=\"forge-${VER}-installer.jar\"",
+          "curl -Lf \"https://maven.minecraftforge.net/net/minecraftforge/forge/${VER}/${INS}\" -o ${INS}",
+          "java -jar ${INS} --installServer"
+        ]
+      },
+      "start": {
+        "linux": "bash run.sh"
+      }
+    },
+    {
+      "id": "efebaba-fabric-1-20-3",
+      "title": "Efe Baba Fabric 1.20.3",
+      "description": "Sets up a Fabric server for Minecraft 1.20.3 on Linux using the official Fabric installer and latest loader metadata.",
+      "tags": [
+        "minecraft",
+        "fabric",
+        "java",
+        "server",
+        "1.20.3"
+      ],
+      "icon": "https://fabricmc.net/assets/logo.png",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.20.3",
+        "MEMORY": "4G"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "INS=$(curl -s https://meta.fabricmc.net/v2/versions/installer | jq -r '.[0].url')",
+          "curl -Lf \"$INS\" -o fabric-installer.jar",
+          "java -jar fabric-installer.jar server -mcversion ${MC_VERSION} -downloadMinecraft -noprofile"
+        ]
+      },
+      "start": {
+        "linux": "java -Xms${MEMORY} -Xmx${MEMORY} -jar fabric-server-launch.jar nogui"
+      }
+    },
+    {
+      "id": "efebaba-paper-1-20-4",
+      "title": "Efe Baba Paper 1.20.4",
+      "description": "Installs and runs PaperMC build for Minecraft 1.20.4 on Linux. Auto-fetches the latest build for this version.",
+      "tags": [
+        "minecraft",
+        "paper",
+        "java",
+        "server",
+        "1.20.4"
+      ],
+      "icon": "https://papermc.io/assets/images/papermc-logo.svg",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.20.4",
+        "MEMORY": "4G",
+        "JAR_NAME": "paper.jar"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "API=\"https://api.papermc.io/v2/projects/paper/versions/${MC_VERSION}/builds\"",
+          "BUILD=$(curl -s \"$API\" | jq -r '.builds[-1].build')",
+          "URL=\"https://api.papermc.io/v2/projects/paper/versions/${MC_VERSION}/builds/${BUILD}/downloads/paper-${MC_VERSION}-${BUILD}.jar\"",
+          "curl -Lf \"$URL\" -o ${JAR_NAME}"
+        ]
+      },
+      "start": {
+        "linux": "java -Xms${MEMORY} -Xmx${MEMORY} -jar ${JAR_NAME} nogui"
+      }
+    },
+    {
+      "id": "efebaba-forge-1-20-4",
+      "title": "Efe Baba Forge 1.20.4",
+      "description": "Installs the official Forge server for Minecraft 1.20.4 on Linux using the latest installer available on Forge Maven.",
+      "tags": [
+        "minecraft",
+        "forge",
+        "java",
+        "server",
+        "1.20.4"
+      ],
+      "icon": "https://files.minecraftforge.net/static/media/logo.9c1a9a6b.svg",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.20.4",
+        "MEMORY": "4G"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "META_URL=\"https://maven.minecraftforge.net/net/minecraftforge/forge/maven-metadata.xml\"",
+          "VER=$(curl -s $META_URL | sed -n 's:.*<version>\\(.*\\)</version>.*:\\1:p' | grep \"^${MC_VERSION}-\" | tail -n 1)",
+          "INS=\"forge-${VER}-installer.jar\"",
+          "curl -Lf \"https://maven.minecraftforge.net/net/minecraftforge/forge/${VER}/${INS}\" -o ${INS}",
+          "java -jar ${INS} --installServer"
+        ]
+      },
+      "start": {
+        "linux": "bash run.sh"
+      }
+    },
+    {
+      "id": "efebaba-fabric-1-20-4",
+      "title": "Efe Baba Fabric 1.20.4",
+      "description": "Sets up a Fabric server for Minecraft 1.20.4 on Linux using the official Fabric installer and latest loader metadata.",
+      "tags": [
+        "minecraft",
+        "fabric",
+        "java",
+        "server",
+        "1.20.4"
+      ],
+      "icon": "https://fabricmc.net/assets/logo.png",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.20.4",
+        "MEMORY": "4G"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "INS=$(curl -s https://meta.fabricmc.net/v2/versions/installer | jq -r '.[0].url')",
+          "curl -Lf \"$INS\" -o fabric-installer.jar",
+          "java -jar fabric-installer.jar server -mcversion ${MC_VERSION} -downloadMinecraft -noprofile"
+        ]
+      },
+      "start": {
+        "linux": "java -Xms${MEMORY} -Xmx${MEMORY} -jar fabric-server-launch.jar nogui"
+      }
+    },
+    {
+      "id": "efebaba-paper-1-20-5",
+      "title": "Efe Baba Paper 1.20.5",
+      "description": "Installs and runs PaperMC build for Minecraft 1.20.5 on Linux. Auto-fetches the latest build for this version.",
+      "tags": [
+        "minecraft",
+        "paper",
+        "java",
+        "server",
+        "1.20.5"
+      ],
+      "icon": "https://papermc.io/assets/images/papermc-logo.svg",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.20.5",
+        "MEMORY": "4G",
+        "JAR_NAME": "paper.jar"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "API=\"https://api.papermc.io/v2/projects/paper/versions/${MC_VERSION}/builds\"",
+          "BUILD=$(curl -s \"$API\" | jq -r '.builds[-1].build')",
+          "URL=\"https://api.papermc.io/v2/projects/paper/versions/${MC_VERSION}/builds/${BUILD}/downloads/paper-${MC_VERSION}-${BUILD}.jar\"",
+          "curl -Lf \"$URL\" -o ${JAR_NAME}"
+        ]
+      },
+      "start": {
+        "linux": "java -Xms${MEMORY} -Xmx${MEMORY} -jar ${JAR_NAME} nogui"
+      }
+    },
+    {
+      "id": "efebaba-forge-1-20-5",
+      "title": "Efe Baba Forge 1.20.5",
+      "description": "Installs the official Forge server for Minecraft 1.20.5 on Linux using the latest installer available on Forge Maven.",
+      "tags": [
+        "minecraft",
+        "forge",
+        "java",
+        "server",
+        "1.20.5"
+      ],
+      "icon": "https://files.minecraftforge.net/static/media/logo.9c1a9a6b.svg",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.20.5",
+        "MEMORY": "4G"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "META_URL=\"https://maven.minecraftforge.net/net/minecraftforge/forge/maven-metadata.xml\"",
+          "VER=$(curl -s $META_URL | sed -n 's:.*<version>\\(.*\\)</version>.*:\\1:p' | grep \"^${MC_VERSION}-\" | tail -n 1)",
+          "INS=\"forge-${VER}-installer.jar\"",
+          "curl -Lf \"https://maven.minecraftforge.net/net/minecraftforge/forge/${VER}/${INS}\" -o ${INS}",
+          "java -jar ${INS} --installServer"
+        ]
+      },
+      "start": {
+        "linux": "bash run.sh"
+      }
+    },
+    {
+      "id": "efebaba-fabric-1-20-5",
+      "title": "Efe Baba Fabric 1.20.5",
+      "description": "Sets up a Fabric server for Minecraft 1.20.5 on Linux using the official Fabric installer and latest loader metadata.",
+      "tags": [
+        "minecraft",
+        "fabric",
+        "java",
+        "server",
+        "1.20.5"
+      ],
+      "icon": "https://fabricmc.net/assets/logo.png",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.20.5",
+        "MEMORY": "4G"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "INS=$(curl -s https://meta.fabricmc.net/v2/versions/installer | jq -r '.[0].url')",
+          "curl -Lf \"$INS\" -o fabric-installer.jar",
+          "java -jar fabric-installer.jar server -mcversion ${MC_VERSION} -downloadMinecraft -noprofile"
+        ]
+      },
+      "start": {
+        "linux": "java -Xms${MEMORY} -Xmx${MEMORY} -jar fabric-server-launch.jar nogui"
+      }
+    },
+    {
+      "id": "efebaba-paper-1-20-6",
+      "title": "Efe Baba Paper 1.20.6",
+      "description": "Installs and runs PaperMC build for Minecraft 1.20.6 on Linux. Auto-fetches the latest build for this version.",
+      "tags": [
+        "minecraft",
+        "paper",
+        "java",
+        "server",
+        "1.20.6"
+      ],
+      "icon": "https://papermc.io/assets/images/papermc-logo.svg",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.20.6",
+        "MEMORY": "4G",
+        "JAR_NAME": "paper.jar"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "API=\"https://api.papermc.io/v2/projects/paper/versions/${MC_VERSION}/builds\"",
+          "BUILD=$(curl -s \"$API\" | jq -r '.builds[-1].build')",
+          "URL=\"https://api.papermc.io/v2/projects/paper/versions/${MC_VERSION}/builds/${BUILD}/downloads/paper-${MC_VERSION}-${BUILD}.jar\"",
+          "curl -Lf \"$URL\" -o ${JAR_NAME}"
+        ]
+      },
+      "start": {
+        "linux": "java -Xms${MEMORY} -Xmx${MEMORY} -jar ${JAR_NAME} nogui"
+      }
+    },
+    {
+      "id": "efebaba-forge-1-20-6",
+      "title": "Efe Baba Forge 1.20.6",
+      "description": "Installs the official Forge server for Minecraft 1.20.6 on Linux using the latest installer available on Forge Maven.",
+      "tags": [
+        "minecraft",
+        "forge",
+        "java",
+        "server",
+        "1.20.6"
+      ],
+      "icon": "https://files.minecraftforge.net/static/media/logo.9c1a9a6b.svg",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.20.6",
+        "MEMORY": "4G"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "META_URL=\"https://maven.minecraftforge.net/net/minecraftforge/forge/maven-metadata.xml\"",
+          "VER=$(curl -s $META_URL | sed -n 's:.*<version>\\(.*\\)</version>.*:\\1:p' | grep \"^${MC_VERSION}-\" | tail -n 1)",
+          "INS=\"forge-${VER}-installer.jar\"",
+          "curl -Lf \"https://maven.minecraftforge.net/net/minecraftforge/forge/${VER}/${INS}\" -o ${INS}",
+          "java -jar ${INS} --installServer"
+        ]
+      },
+      "start": {
+        "linux": "bash run.sh"
+      }
+    },
+    {
+      "id": "efebaba-fabric-1-20-6",
+      "title": "Efe Baba Fabric 1.20.6",
+      "description": "Sets up a Fabric server for Minecraft 1.20.6 on Linux using the official Fabric installer and latest loader metadata.",
+      "tags": [
+        "minecraft",
+        "fabric",
+        "java",
+        "server",
+        "1.20.6"
+      ],
+      "icon": "https://fabricmc.net/assets/logo.png",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.20.6",
+        "MEMORY": "4G"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "INS=$(curl -s https://meta.fabricmc.net/v2/versions/installer | jq -r '.[0].url')",
+          "curl -Lf \"$INS\" -o fabric-installer.jar",
+          "java -jar fabric-installer.jar server -mcversion ${MC_VERSION} -downloadMinecraft -noprofile"
+        ]
+      },
+      "start": {
+        "linux": "java -Xms${MEMORY} -Xmx${MEMORY} -jar fabric-server-launch.jar nogui"
+      }
+    },
+    {
+      "id": "efebaba-paper-1-21",
+      "title": "Efe Baba Paper 1.21",
+      "description": "Installs and runs PaperMC build for Minecraft 1.21 on Linux. Auto-fetches the latest build for this version.",
+      "tags": [
+        "minecraft",
+        "paper",
+        "java",
+        "server",
+        "1.21"
+      ],
+      "icon": "https://papermc.io/assets/images/papermc-logo.svg",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.21",
+        "MEMORY": "4G",
+        "JAR_NAME": "paper.jar"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "API=\"https://api.papermc.io/v2/projects/paper/versions/${MC_VERSION}/builds\"",
+          "BUILD=$(curl -s \"$API\" | jq -r '.builds[-1].build')",
+          "URL=\"https://api.papermc.io/v2/projects/paper/versions/${MC_VERSION}/builds/${BUILD}/downloads/paper-${MC_VERSION}-${BUILD}.jar\"",
+          "curl -Lf \"$URL\" -o ${JAR_NAME}"
+        ]
+      },
+      "start": {
+        "linux": "java -Xms${MEMORY} -Xmx${MEMORY} -jar ${JAR_NAME} nogui"
+      }
+    },
+    {
+      "id": "efebaba-forge-1-21",
+      "title": "Efe Baba Forge 1.21",
+      "description": "Installs the official Forge server for Minecraft 1.21 on Linux using the latest installer available on Forge Maven.",
+      "tags": [
+        "minecraft",
+        "forge",
+        "java",
+        "server",
+        "1.21"
+      ],
+      "icon": "https://files.minecraftforge.net/static/media/logo.9c1a9a6b.svg",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.21",
+        "MEMORY": "4G"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "META_URL=\"https://maven.minecraftforge.net/net/minecraftforge/forge/maven-metadata.xml\"",
+          "VER=$(curl -s $META_URL | sed -n 's:.*<version>\\(.*\\)</version>.*:\\1:p' | grep \"^${MC_VERSION}-\" | tail -n 1)",
+          "INS=\"forge-${VER}-installer.jar\"",
+          "curl -Lf \"https://maven.minecraftforge.net/net/minecraftforge/forge/${VER}/${INS}\" -o ${INS}",
+          "java -jar ${INS} --installServer"
+        ]
+      },
+      "start": {
+        "linux": "bash run.sh"
+      }
+    },
+    {
+      "id": "efebaba-fabric-1-21",
+      "title": "Efe Baba Fabric 1.21",
+      "description": "Sets up a Fabric server for Minecraft 1.21 on Linux using the official Fabric installer and latest loader metadata.",
+      "tags": [
+        "minecraft",
+        "fabric",
+        "java",
+        "server",
+        "1.21"
+      ],
+      "icon": "https://fabricmc.net/assets/logo.png",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.21",
+        "MEMORY": "4G"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "INS=$(curl -s https://meta.fabricmc.net/v2/versions/installer | jq -r '.[0].url')",
+          "curl -Lf \"$INS\" -o fabric-installer.jar",
+          "java -jar fabric-installer.jar server -mcversion ${MC_VERSION} -downloadMinecraft -noprofile"
+        ]
+      },
+      "start": {
+        "linux": "java -Xms${MEMORY} -Xmx${MEMORY} -jar fabric-server-launch.jar nogui"
+      }
+    },
+    {
+      "id": "efebaba-paper-1-21-1",
+      "title": "Efe Baba Paper 1.21.1",
+      "description": "Installs and runs PaperMC build for Minecraft 1.21.1 on Linux. Auto-fetches the latest build for this version.",
+      "tags": [
+        "minecraft",
+        "paper",
+        "java",
+        "server",
+        "1.21.1"
+      ],
+      "icon": "https://papermc.io/assets/images/papermc-logo.svg",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.21.1",
+        "MEMORY": "4G",
+        "JAR_NAME": "paper.jar"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "API=\"https://api.papermc.io/v2/projects/paper/versions/${MC_VERSION}/builds\"",
+          "BUILD=$(curl -s \"$API\" | jq -r '.builds[-1].build')",
+          "URL=\"https://api.papermc.io/v2/projects/paper/versions/${MC_VERSION}/builds/${BUILD}/downloads/paper-${MC_VERSION}-${BUILD}.jar\"",
+          "curl -Lf \"$URL\" -o ${JAR_NAME}"
+        ]
+      },
+      "start": {
+        "linux": "java -Xms${MEMORY} -Xmx${MEMORY} -jar ${JAR_NAME} nogui"
+      }
+    },
+    {
+      "id": "efebaba-forge-1-21-1",
+      "title": "Efe Baba Forge 1.21.1",
+      "description": "Installs the official Forge server for Minecraft 1.21.1 on Linux using the latest installer available on Forge Maven.",
+      "tags": [
+        "minecraft",
+        "forge",
+        "java",
+        "server",
+        "1.21.1"
+      ],
+      "icon": "https://files.minecraftforge.net/static/media/logo.9c1a9a6b.svg",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.21.1",
+        "MEMORY": "4G"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "META_URL=\"https://maven.minecraftforge.net/net/minecraftforge/forge/maven-metadata.xml\"",
+          "VER=$(curl -s $META_URL | sed -n 's:.*<version>\\(.*\\)</version>.*:\\1:p' | grep \"^${MC_VERSION}-\" | tail -n 1)",
+          "INS=\"forge-${VER}-installer.jar\"",
+          "curl -Lf \"https://maven.minecraftforge.net/net/minecraftforge/forge/${VER}/${INS}\" -o ${INS}",
+          "java -jar ${INS} --installServer"
+        ]
+      },
+      "start": {
+        "linux": "bash run.sh"
+      }
+    },
+    {
+      "id": "efebaba-fabric-1-21-1",
+      "title": "Efe Baba Fabric 1.21.1",
+      "description": "Sets up a Fabric server for Minecraft 1.21.1 on Linux using the official Fabric installer and latest loader metadata.",
+      "tags": [
+        "minecraft",
+        "fabric",
+        "java",
+        "server",
+        "1.21.1"
+      ],
+      "icon": "https://fabricmc.net/assets/logo.png",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.21.1",
+        "MEMORY": "4G"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "INS=$(curl -s https://meta.fabricmc.net/v2/versions/installer | jq -r '.[0].url')",
+          "curl -Lf \"$INS\" -o fabric-installer.jar",
+          "java -jar fabric-installer.jar server -mcversion ${MC_VERSION} -downloadMinecraft -noprofile"
+        ]
+      },
+      "start": {
+        "linux": "java -Xms${MEMORY} -Xmx${MEMORY} -jar fabric-server-launch.jar nogui"
+      }
+    },
+    {
+      "id": "efebaba-paper-1-21-2",
+      "title": "Efe Baba Paper 1.21.2",
+      "description": "Installs and runs PaperMC build for Minecraft 1.21.2 on Linux. Auto-fetches the latest build for this version.",
+      "tags": [
+        "minecraft",
+        "paper",
+        "java",
+        "server",
+        "1.21.2"
+      ],
+      "icon": "https://papermc.io/assets/images/papermc-logo.svg",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.21.2",
+        "MEMORY": "4G",
+        "JAR_NAME": "paper.jar"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "API=\"https://api.papermc.io/v2/projects/paper/versions/${MC_VERSION}/builds\"",
+          "BUILD=$(curl -s \"$API\" | jq -r '.builds[-1].build')",
+          "URL=\"https://api.papermc.io/v2/projects/paper/versions/${MC_VERSION}/builds/${BUILD}/downloads/paper-${MC_VERSION}-${BUILD}.jar\"",
+          "curl -Lf \"$URL\" -o ${JAR_NAME}"
+        ]
+      },
+      "start": {
+        "linux": "java -Xms${MEMORY} -Xmx${MEMORY} -jar ${JAR_NAME} nogui"
+      }
+    },
+    {
+      "id": "efebaba-forge-1-21-2",
+      "title": "Efe Baba Forge 1.21.2",
+      "description": "Installs the official Forge server for Minecraft 1.21.2 on Linux using the latest installer available on Forge Maven.",
+      "tags": [
+        "minecraft",
+        "forge",
+        "java",
+        "server",
+        "1.21.2"
+      ],
+      "icon": "https://files.minecraftforge.net/static/media/logo.9c1a9a6b.svg",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.21.2",
+        "MEMORY": "4G"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "META_URL=\"https://maven.minecraftforge.net/net/minecraftforge/forge/maven-metadata.xml\"",
+          "VER=$(curl -s $META_URL | sed -n 's:.*<version>\\(.*\\)</version>.*:\\1:p' | grep \"^${MC_VERSION}-\" | tail -n 1)",
+          "INS=\"forge-${VER}-installer.jar\"",
+          "curl -Lf \"https://maven.minecraftforge.net/net/minecraftforge/forge/${VER}/${INS}\" -o ${INS}",
+          "java -jar ${INS} --installServer"
+        ]
+      },
+      "start": {
+        "linux": "bash run.sh"
+      }
+    },
+    {
+      "id": "efebaba-fabric-1-21-2",
+      "title": "Efe Baba Fabric 1.21.2",
+      "description": "Sets up a Fabric server for Minecraft 1.21.2 on Linux using the official Fabric installer and latest loader metadata.",
+      "tags": [
+        "minecraft",
+        "fabric",
+        "java",
+        "server",
+        "1.21.2"
+      ],
+      "icon": "https://fabricmc.net/assets/logo.png",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.21.2",
+        "MEMORY": "4G"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "INS=$(curl -s https://meta.fabricmc.net/v2/versions/installer | jq -r '.[0].url')",
+          "curl -Lf \"$INS\" -o fabric-installer.jar",
+          "java -jar fabric-installer.jar server -mcversion ${MC_VERSION} -downloadMinecraft -noprofile"
+        ]
+      },
+      "start": {
+        "linux": "java -Xms${MEMORY} -Xmx${MEMORY} -jar fabric-server-launch.jar nogui"
+      }
+    },
+    {
+      "id": "efebaba-paper-1-21-3",
+      "title": "Efe Baba Paper 1.21.3",
+      "description": "Installs and runs PaperMC build for Minecraft 1.21.3 on Linux. Auto-fetches the latest build for this version.",
+      "tags": [
+        "minecraft",
+        "paper",
+        "java",
+        "server",
+        "1.21.3"
+      ],
+      "icon": "https://papermc.io/assets/images/papermc-logo.svg",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.21.3",
+        "MEMORY": "4G",
+        "JAR_NAME": "paper.jar"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "API=\"https://api.papermc.io/v2/projects/paper/versions/${MC_VERSION}/builds\"",
+          "BUILD=$(curl -s \"$API\" | jq -r '.builds[-1].build')",
+          "URL=\"https://api.papermc.io/v2/projects/paper/versions/${MC_VERSION}/builds/${BUILD}/downloads/paper-${MC_VERSION}-${BUILD}.jar\"",
+          "curl -Lf \"$URL\" -o ${JAR_NAME}"
+        ]
+      },
+      "start": {
+        "linux": "java -Xms${MEMORY} -Xmx${MEMORY} -jar ${JAR_NAME} nogui"
+      }
+    },
+    {
+      "id": "efebaba-forge-1-21-3",
+      "title": "Efe Baba Forge 1.21.3",
+      "description": "Installs the official Forge server for Minecraft 1.21.3 on Linux using the latest installer available on Forge Maven.",
+      "tags": [
+        "minecraft",
+        "forge",
+        "java",
+        "server",
+        "1.21.3"
+      ],
+      "icon": "https://files.minecraftforge.net/static/media/logo.9c1a9a6b.svg",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.21.3",
+        "MEMORY": "4G"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "META_URL=\"https://maven.minecraftforge.net/net/minecraftforge/forge/maven-metadata.xml\"",
+          "VER=$(curl -s $META_URL | sed -n 's:.*<version>\\(.*\\)</version>.*:\\1:p' | grep \"^${MC_VERSION}-\" | tail -n 1)",
+          "INS=\"forge-${VER}-installer.jar\"",
+          "curl -Lf \"https://maven.minecraftforge.net/net/minecraftforge/forge/${VER}/${INS}\" -o ${INS}",
+          "java -jar ${INS} --installServer"
+        ]
+      },
+      "start": {
+        "linux": "bash run.sh"
+      }
+    },
+    {
+      "id": "efebaba-fabric-1-21-3",
+      "title": "Efe Baba Fabric 1.21.3",
+      "description": "Sets up a Fabric server for Minecraft 1.21.3 on Linux using the official Fabric installer and latest loader metadata.",
+      "tags": [
+        "minecraft",
+        "fabric",
+        "java",
+        "server",
+        "1.21.3"
+      ],
+      "icon": "https://fabricmc.net/assets/logo.png",
+      "platforms": [
+        "linux"
+      ],
+      "variables": {
+        "MC_VERSION": "1.21.3",
+        "MEMORY": "4G"
+      },
+      "install": {
+        "linux": [
+          "set -e",
+          "mkdir -p server && cd server",
+          "printf 'eula=true\\n' > eula.txt",
+          "INS=$(curl -s https://meta.fabricmc.net/v2/versions/installer | jq -r '.[0].url')",
+          "curl -Lf \"$INS\" -o fabric-installer.jar",
+          "java -jar fabric-installer.jar server -mcversion ${MC_VERSION} -downloadMinecraft -noprofile"
+        ]
+      },
+      "start": {
+        "linux": "java -Xms${MEMORY} -Xmx${MEMORY} -jar fabric-server-launch.jar nogui"
+      }
+    }
+  ]
+}
