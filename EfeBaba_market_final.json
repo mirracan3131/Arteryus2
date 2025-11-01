@@ -1,15 +1,15 @@
 {
   "language": "en_us",
   "platform": "Linux",
-  "description": "Automatic setup for Prominence II: Hasturian Era (Fabric 1.20.1). Downloads the server pack (ZIP), extracts it, accepts the EULA, and runs via Fabric.",
+  "description": "One-click setup for Prominence II: Hasturian Era (Fabric 1.20.1). Automatically installs Fabric, accepts the EULA, and prepares a ready-to-run server.",
   "image": "https://cdn.modrinth.com/data/WzZxZs1f/53a0bdf95f22539d803621b1d4977b9a1c935e9f.png",
   "gameType": "Minecraft",
-  "title": "[Efe Baba Modpack] Prominence II: Hasturian Era (Fabric 1.20.1)",
+  "title": "[Efe Baba] Prominence II: Hasturian Era (Fabric 1.20.1)",
   "category": "mc-fabric",
   "runtime": "Java 17+",
   "hardware": "RAM 8G+",
   "size": "850MB",
-  "remark": "Fabric edition, one-click auto setup.",
+  "remark": "Fabric modpack by Efe Baba — fully automatic installation.",
   "targetLink": "https://cdn.modrinth.com/data/WzZxZs1f/versions/xI4sT3xn/Prominence%20II%20-%20Hasturian%20Era%20Server%20Pack%20(Fabric%201.20.1).zip",
   "author": "Efe Baba",
   "setupInfo": {
